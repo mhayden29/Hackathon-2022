@@ -1,0 +1,248 @@
+/******************************************************************************
+CSS
+font-family: 'Barlow Semi Condensed', sans-serif;
+******************************************************************************/
+*{
+  margin:0;
+  padding:0;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+html {
+  max-width:100%;
+  overflow-x:hidden;
+}
+
+/*COVER CONTAINER*/
+.cover{
+  height:100vh;
+  width:100vw;
+}
+.top-cover{
+  width:100vw;
+  height:90vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+#title{
+  position:absolute;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:900;
+  color:white;
+  font-size:70px;
+  text-align:left;
+  left:2rem;
+}
+#mountain{
+  width:50vw;
+  left:0;
+  height:100%;
+}
+.right-cover{
+  width: 50vw;
+  height: 100%;
+  background-color: #1D4E89;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  align-items:flex-start;
+  overflow:hidden;
+}
+.title, .card-body{
+  position:relative;
+}
+.title{
+  margin: 10%;
+  margin-left:12px;
+  color:white;
+  font-size:30px;
+  width:100%;
+  bottom:-10rem;
+}
+.description{
+  position:relative;
+  margin-top:4rem;
+  margin: 10%;
+  margin-left:12px;
+  color:white;
+  font-size:20px;
+  width:90%;
+  bottom:-13rem;
+}
+.card-body{
+  transform: translateY(0%);
+  transition: transform ease-out 400ms 350ms;
+}
+.right-cover:hover .card-body{
+  transform: translateY(-20rem);
+  transition: transform ease-out 400ms 350ms;
+}
+.title::after{
+  content:'';
+  height:10px;
+  width:18rem;
+  background:#00B2CA;
+  /*Positioning*/
+  position:absolute;
+  bottom:-1rem;
+  left:0;
+  /*Transforming*/
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform ease-in 250ms;
+}
+.right-cover:hover .title::after{
+  transform:scaleX(1);
+}
+
+#mouse-scroll{
+  height:8rem;
+  width:auto;
+  opacity:1;
+  position:absolute;
+  top:80%;
+  animation: float ease-out 3000ms infinite;
+}
+@keyframes float{
+  0%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(18px);
+  }
+  100%{
+    transform:translateY(0);
+  }
+}
+/*ABOUT US CONTAINER*/
+.about-us{
+  height:40vh;
+  width:100vw;
+  display:flex;
+  align-items: center;
+}
+#about-info{
+  width:50%;
+  background-color:#e76f51;
+  color:white;
+  font-weight:300;
+  font-size:18px;
+  padding:12px;
+  text-align:center;
+}
+#about-header{
+  margin-left:15%;
+}
+/*INPUTTING CONTAINER*/
+.form-plastic{
+  width:100vw;
+  margin-top:1rem;
+  margin-left:2rem;
+  height:80vh;
+}
+#form-header{
+  background-color:#F79256;
+  width:50%;
+  padding:12px;
+  color:white;
+  margin-left:-2rem;
+}
+form{
+  width:100vw;
+  margin-top:1rem;
+  display:flex;
+  gap:1rem;
+}
+#country_select{
+  margin-left:-1.5rem;
+  height:1.5rem;
+}
+#age_input{
+  margin-left:-1.5rem;
+  height:1.5rem;
+}
+.answers{
+  background-color:#FBD1A2;
+  padding:12px;
+  margin-left:30px;
+  color:white;
+  font-weight:300;
+  height:9rem;
+}
+#goal{
+  background-color:#7DCFB6;
+  width:50%;
+  padding:12px;
+  color:white;
+  margin-left:-2rem;
+  margin-top:1rem;
+}
+#daily-goal{
+  background-color:#B5E3D5;
+  padding:12px;
+  margin-left:30px;
+  color:white;
+  height:7rem;
+  width:50rem;
+  margin-top:1rem;
+  font-weight:300;
+}
+#tracking-header{
+  background-color:#00B2CA;
+  width:50%;
+  padding:12px;
+  color:white;
+  margin-left:-2rem;
+  margin-top:1rem;
+}
+#plastic-chart{
+  width:80%;
+}
+
+.form-food{
+  width:100vw;
+  margin-top:1rem;
+  margin-left:2rem;
+  height:80vh;
+}
+#eform-header{
+  background-color:#F79256;
+  width:50%;
+  padding:12px;
+  color:white;
+  margin-left:-2rem;
+}
+#ecountry_select{
+  margin-left:-1.5rem;
+  height:1.5rem;
+}
+#eage_input{
+  margin-left:-1.5rem;
+  height:1.5rem;
+}
+.eanswers{
+  background-color:#FBD1A2;
+  padding:12px;
+  margin-left:30px;
+  color:white;
+  font-weight:300;
+  height:5rem;
+}
+#egoal{
+  background-color:#7DCFB6;
+  width:50%;
+  padding:12px;
+  color:white;
+  margin-left:-2rem;
+  margin-top:1rem;
+}
+#edaily-goal{
+  background-color:#B5E3D5;
+  padding:12px;
+  margin-left:30px;
+  color:white;
+  height:4rem;
+  width:50rem;
+  margin-top:1rem;
+  font-weight:300;
+}
