@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Climate Waste Tracker</title>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+    <!--fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="cover">
+      <div class="top-cover">
+        <h1 id="title">
+          Climate<br />
+          Waste <br />Tracker
+        </h1>
+        <img
+          id="mountain"
+          src="https://cdn.glitch.global/7b588a5e-8f3e-4ec5-9453-a8aafd07b164/mountain.jpg?v=1648944178407"
+        />
+        <div class="right-cover">
+          <div class="card-body">
+            <p class="title">
+              Use this tracker to see how your plastic and food usage compares to the
+              average usage in your country.<br />
+              (hover for more information)
+            </p>
+            <div class="description">
+              After finding the average use of plastic/food per person in your
+              country, you can correlate it directly with the amount of plastic/food
+              you use daily so that you can challenge
+              yourself to get below the average person!<br />
+            <!--  Once you get to a point where it is better than the average
+              person, we will start challenging you to the average person of the
+              next ranked country so you can keep on progressing in reducing
+              your plastic waste! -->
+            </div>
+          </div>
+        </div>
+        <img
+          id="mouse-scroll"
+          src="https://cdn.glitch.global/7b588a5e-8f3e-4ec5-9453-a8aafd07b164/mouse%20icon.png?v=1648945826451"
+        />
+      </div>
+    </div>
+
+    <div class="about-us">
+      <h4 id="about-info">
+        We are a team of highschool students who are passionate in trying to
+        help people be more aware of the amount of plastic they waste each day.
+        We built this website as a mission to allow people, like us, continue to
+        progress and improve their waste habits in order to continue helping the
+        world become a healthier place than it is now.<br />
+        <br />
+        Every year, we dump 2.12 BILLION TONS of waste onto our planet, and this
+        is mostly because of the amount of trash every person accumlates and
+        throws out each day. So we challenge YOU to overcome your trash, and
+        little by litte, soon we all will decrease the billions to smaller
+        numbers.
+      </h4>
+      <h1 id="about-header">WHO ARE WE?</h1>
+    </div>
+    <div class="form-plastic">
+      <h2 id="form-header">FIND WHAT THE AVERAGE PLASTIC IS IN YOUR COUNTRY BELOW:</h2>
+      <form>
+        <label>Country:</label>
+        <br />
+        <select id="country_select" onchange="change()">
+          <option value="none" selected>-- Select --</option>
+          <option value="argentina">Argentina</option>
+          <option value="australia">Australia</option>
+          <option value="brazil">Brazil</option>
+          <option value="canada">Canada</option>
+          <option value="chile">Chile</option>
+          <option value="china">China</option>
+          <option value="egypt">Egypt</option>
+          <option value="france">France</option>
+          <option value="germany">Germany</option>
+          <option value="india">India</option>
+          <option value="indonesia">Indonesia</option>
+          <option value="iran">Iran</option>
+          <option value="italy">Italy</option>
+          <option value="japan">Japan</option>
+          <option value="mexico">Mexico</option>
+          <option value="netherlands">Netherlands</option>
+          <option value="nigeria">Nigeria</option>
+          <option value="pakistan">Pakistan</option>
+          <option value="phillipines">Phillipines</option>
+          <option value="poland">Poland</option>
+          <option value="russia">Russia</option>
+          <option value="saudi arabia">Saudi Arabia</option>
+          <option value="south africa">South Africa</option>
+          <option value="south korea">South Korea</option>
+          <option value="spain">Spain</option>
+          <option value="thailand">Thailand</option>
+          <option value="turkey">Turkey</option>
+          <option value="the UK">UK</option>
+          <option value="the USA">USA</option>
+          <option value="vietnam">Vietnam</option>
+        </select>
+        <br />
+        <label>Age:</label> <br /><input
+          type="number"
+          id="age_input"
+          onchange="change()"
+          min="1"
+        />
+        <div class="answers">
+          <p id="result1"></p>
+          <p id="result2"></p>
+          <br />
+          <p id="result3"></p>
+        </div>
+      </form>
+      <div class="goal-container">
+        <h2 id="goal">FROM THE AVERAGE, YOUR DAILY GOAL FOR TODAY IS:</h2>
+        <p id="daily-goal"></p>
+      </div>
+      <!--<h2 id="tracking-header">INPUT YOUR PLASTIC USAGE FOR THE DAY:</h2>
+      <input type="number" id="usage-input" min="0"/><label>kg</label>
+      <br/>
+      <button id="add-button" onclick="trackData()">
+        Add
+      </button><br/>
+      <canvas id="plastic-chart"></canvas>-->
+    </div>
+    
+    <div class="form-food">
+      <h2 id="eform-header">FIND WHAT THE AVERAGE FOOD WASTE IS IN YOUR COUNTRY BELOW:</h2>
+      <form>
+        <label>Country:</label>
+        <br />
+        <select id="ecountry_select" onchange="echange()">
+          <option value="none" selected>-- Select --</option>
+          <option value="australia">Australia</option>
+          <option value="china">China</option>
+          <option value="france">France</option>
+          <option value="germany">Germany</option>
+          <option value="india">India</option>
+          <option value="japan">Japan</option>
+          <option value="russia">Russia</option>
+          <option value="spain">Spain</option>
+          <option value="the UK">UK</option>
+          <option value="the USA">USA</option>
+        </select>
+        <br />
+        <label>Age:</label> <br /><input
+          type="number"
+          id="eage_input"
+          onchange="echange()"
+          min="1"
+        />
+        <div class="eanswers">
+          <p id="eresult1"></p>
+          <p id="eresult2"></p>
+          <br />
+          <p id="eresult3"></p>
+        </div>
+      </form>
+      <div class="egoal-container">
+        <h2 id="egoal">FROM THE AVERAGE, YOUR DAILY GOAL FOR TODAY IS:</h2>
+        <p id="edaily-goal"></p>
+      </div>
+    </div>
+  </body>
+</html>
